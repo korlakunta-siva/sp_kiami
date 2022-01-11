@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { T } from 'src/app/t.const';
-import { GitlabCfg } from '../kiami';
+import { KiamiCfg } from '../kiami';
 import { DEFAULT_KIAMI_CFG, KIAMI_CONFIG_FORM } from '../kiami.const';
 
 @Component({

@@ -41,6 +41,7 @@ export class DatabaseService {
   async save(key: string, data: unknown): Promise<unknown> {
     this._lastParams = { a: 'save', key, data };
     try {
+      console.log('Saving', key, data);
       return await this._adapter.save(key, data);
     } catch (e) {
       console.warn('DB Save Error: Last Params,', this._lastParams);

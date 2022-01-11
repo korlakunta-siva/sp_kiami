@@ -5,7 +5,7 @@ import {
   ConfigFormSection,
   LimitedFormlyFieldConfig,
 } from '../../../config/global-config.model';
-import { GITHUB_INITIAL_POLL_DELAY  } from '../github/github.const';
+import { GITHUB_INITIAL_POLL_DELAY } from '../github/github.const';
 
 export const DEFAULT_KIAMI_CFG: KiamiCfg = {
   isEnabled: false,
@@ -21,9 +21,9 @@ export const DEFAULT_KIAMI_CFG: KiamiCfg = {
 };
 
 // NOTE: we need a high limit because git has low usage limits :(
-export const KIAMI_MAX_CACHE_AGE = 10 * 1000;
+export const KIAMI_MAX_CACHE_AGE = 60 * 1000;
 export const KIAMI_POLL_INTERVAL = KIAMI_MAX_CACHE_AGE;
-export const KIAMI_INITIAL_POLL_DELAY = 0 + 8000;
+export const KIAMI_INITIAL_POLL_DELAY = GITHUB_INITIAL_POLL_DELAY + 8000;
 
 // export const KIAMI_POLL_INTERVAL = 15 * 1000;
 export const KIAMI_BASE_URL = 'https://time.andnow.io/';

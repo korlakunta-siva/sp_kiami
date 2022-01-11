@@ -4,10 +4,7 @@ import { IssueProviderKey, SearchResultItem } from '../../../issue.model';
 import { KiamiCfg } from '../kiami';
 import { KiamiApiService } from '../kiami-api/kiami-api.service';
 
-export const mapKiamiIssue = (
-  issue: KiamiOriginalIssue,
-  cfg: KiamiCfg,
-): KiamiIssue => {
+export const mapKiamiIssue = (issue: KiamiOriginalIssue, cfg: KiamiCfg): KiamiIssue => {
   return {
     html_url: issue.web_url,
     // eslint-disable-next-line id-blacklist
@@ -41,7 +38,7 @@ export const mapKiamiIssue = (
 export const mapKiamiIssueToSearchResult = (issue: KiamiIssue): SearchResultItem => {
   return {
     title: '#' + issue.id + ' ' + issue.title,
-    issueType: 'GITLAB' as IssueProviderKey,
+    issueType: 'KIAMI' as IssueProviderKey,
     issueData: issue,
   };
 };

@@ -123,7 +123,7 @@ export class IssueService {
   }
 
   getPollTimer$(providerKey: IssueProviderKey): Observable<number> {
-    console.log("Getting providerkey poll: " + providerKey);
+    console.log('Getting providerkey poll: ' + providerKey);
     return this.ISSUE_SERVICE_MAP[providerKey].pollTimer$;
   }
 
@@ -141,6 +141,7 @@ export class IssueService {
     providerKey: IssueProviderKey,
     projectId: string,
   ): Promise<void> {
+    console.log('Received Backlog for Project:', providerKey, projectId);
     if (!this.ISSUE_SERVICE_MAP[providerKey].getNewIssuesToAddToBacklog) {
       return;
     }

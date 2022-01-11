@@ -615,6 +615,7 @@ export class PersistenceService {
     isDataImport?: boolean;
     isSyncModelChange?: boolean;
   }): Promise<any> {
+    console.log('SAVING TO DB:', dbKey, data, projectId, isDataImport, isSyncModelChange);
     if (!this._isBlockSaving || isDataImport === true) {
       const idbKey = this._getIDBKey(dbKey, projectId);
       this._store.dispatch(saveToDb({ dbKey, data }));

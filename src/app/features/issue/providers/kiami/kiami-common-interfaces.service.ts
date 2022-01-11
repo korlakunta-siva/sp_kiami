@@ -61,16 +61,16 @@ export class KiamiCommonInterfacesService implements IssueServiceInterface {
 
   getById$(issueId: string, projectId: string): Observable<KiamiIssue> {
     return this._getCfgOnce$(projectId).pipe(
-      concatMap((gitlabCfg) => this._gitlabApiService.getById$(issueId, gitlabCfg)),
+      concatMap((kiamiCfg) => this._gitlabApiService.getById$(issueId, kiamiCfg)),
     );
   }
 
   searchIssues$(searchTerm: string, projectId: string): Observable<SearchResultItem[]> {
     return this._getCfgOnce$(projectId).pipe(
-      switchMap((gitlabCfg) =>
-        this.isEnabled(gitlabCfg) && gitlabCfg.isSearchIssuesFromKiami
+      switchMap((kiamiCfg) =>
+        this.isEnabled(kiamiCfg) && kiamiCfg.isSearchIssuesFromKiami
           ? this._gitlabApiService
-              .searchIssueInProject$(searchTerm, gitlabCfg)
+              .searchIssueInProject$(searchTerm, kiamiCfg)
               .pipe(catchError(() => []))
           : of([]),
       ),

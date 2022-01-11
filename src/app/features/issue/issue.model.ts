@@ -30,7 +30,13 @@ export interface BaseIssueProviderCfg {
   isEnabled: boolean;
 }
 
-export type IssueProviderKey = 'JIRA' | 'GITHUB' | 'GITLAB' | 'KIAMI' | 'CALDAV' | 'OPEN_PROJECT';
+export type IssueProviderKey =
+  | 'JIRA'
+  | 'GITHUB'
+  | 'GITLAB'
+  | 'KIAMI'
+  | 'CALDAV'
+  | 'OPEN_PROJECT';
 export type IssueIntegrationCfg =
   | JiraCfg
   | GithubCfg

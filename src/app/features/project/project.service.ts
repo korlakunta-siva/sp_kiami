@@ -116,7 +116,6 @@ export class ProjectService {
     return this._store$.pipe(select(selectKiamiCfgByProjectId, { id: projectId }));
   }
 
-
   getCaldavCfgForProject$(projectId: string): Observable<CaldavCfg> {
     return this._store$.pipe(select(selectCaldavCfgByProjectId, { id: projectId }));
   }

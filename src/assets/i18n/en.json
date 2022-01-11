@@ -217,10 +217,10 @@
       },
       "FORM": {
         "FILTER_USER": "Username (e.g. to filter out changes by yourself)",
-        "GITLAB_BASE_URL": "Custom Kiami base URL (optional)",
+        "KIAMI_BASE_URL": "Custom Kiami base URL (optional)",
         "IS_AUTO_ADD_TO_BACKLOG": "Automatically add unresolved issues from Kiami to backlog",
         "IS_AUTO_POLL": "Automatically poll imported git issues for changes",
-        "IS_SEARCH_ISSUES_FROM_GITLAB": "Show issues from git as suggestions when adding new tasks",
+        "IS_SEARCH_ISSUES_FROM_KIAMI": "Show issues from Kiami as suggestions when adding new tasks",
         "PROJECT": "(default) project ID or user name/project",
         "SCOPE": "Scope",
         "SCOPE_ALL": "All",
@@ -597,6 +597,7 @@
         "SETUP_CALDAV": "Setup Caldav Integration",
         "SETUP_GIT": "Setup GitHub Integration",
         "SETUP_GITLAB": "Setup GitLab Integration",
+        "SETUP_KIAMI": "Setup Kiami Integration",
         "SETUP_JIRA": "Setup Jira Integration",
         "SETUP_OPEN_PROJECT": "Setup OpenProject Integration"
       },
@@ -1361,6 +1362,7 @@
     "EXPORT_PROJECT": "Export Project",
     "GITHUB_CONFIGURED": "GitHub Integration Configured",
     "GITLAB_CONFIGURED": "GitLab Integration Configured",
+    "KIAMI_CONFIGURED": "Kiami Integration Configured",
     "IMPORT_FROM_FILE": "Import from file",
     "JIRA_CONFIGURED": "Jira Integration Configured",
     "OPEN_PROJECT_CONFIGURED": "OpenProject Integration Configured",

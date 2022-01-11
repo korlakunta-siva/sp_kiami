@@ -258,6 +258,7 @@ export class TaskComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   updateIssueData(): void {
+    console.log('UPDATING ISSUE DATA', this.task);
     this._issueService.refreshIssueTask(this.task, true, true);
   }
 
