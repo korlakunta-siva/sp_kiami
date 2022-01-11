@@ -103,6 +103,7 @@ export class GlobalThemeService {
       ['play', 'assets/icons/play.svg'],
       ['github', 'assets/icons/github.svg'],
       ['gitlab', 'assets/icons/gitlab.svg'],
+      ['kiami', 'assets/icons/gitlab.svg'],
       ['jira', 'assets/icons/jira.svg'],
       ['caldav', 'assets/icons/caldav.svg'],
       ['open_project', 'assets/icons/open-project.svg'],

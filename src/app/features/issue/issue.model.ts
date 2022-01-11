@@ -8,8 +8,13 @@ import {
   GithubIssue,
   GithubIssueReduced,
 } from './providers/github/github-issue/github-issue.model';
+
 import { GitlabCfg } from './providers/gitlab/gitlab';
 import { GitlabIssue } from './providers/gitlab/gitlab-issue/gitlab-issue.model';
+
+import { KiamiCfg as KiamiCfg } from './providers/kiami/kiami';
+import { KiamiIssue as KiamiIssue } from './providers/kiami/kiami-issue/kiami-issue.model';
+
 import {
   CaldavIssue,
   CaldavIssueReduced,
@@ -25,11 +30,12 @@ export interface BaseIssueProviderCfg {
   isEnabled: boolean;
 }
 
-export type IssueProviderKey = 'JIRA' | 'GITHUB' | 'GITLAB' | 'CALDAV' | 'OPEN_PROJECT';
+export type IssueProviderKey = 'JIRA' | 'GITHUB' | 'GITLAB' | 'KIAMI' | 'CALDAV' | 'OPEN_PROJECT';
 export type IssueIntegrationCfg =
   | JiraCfg
   | GithubCfg
   | GitlabCfg
+  | KiamiCfg
   | CaldavCfg
   | OpenProjectCfg;
 
@@ -44,6 +50,7 @@ export interface IssueIntegrationCfgs {
   JIRA?: JiraCfg;
   GITHUB?: GithubCfg;
   GITLAB?: GitlabCfg;
+  KIAMI?: KiamiCfg;
   CALDAV?: CaldavCfg;
   OPEN_PROJECT?: OpenProjectCfg;
 }
@@ -52,6 +59,7 @@ export type IssueData =
   | JiraIssue
   | GithubIssue
   | GitlabIssue
+  | KiamiIssue
   | CaldavIssue
   | OpenProjectWorkPackage;
 
@@ -59,6 +67,7 @@ export type IssueDataReduced =
   | GithubIssueReduced
   | JiraIssueReduced
   | GitlabIssue
+  | KiamiIssue
   | OpenProjectWorkPackageReduced
   | CaldavIssueReduced;
 

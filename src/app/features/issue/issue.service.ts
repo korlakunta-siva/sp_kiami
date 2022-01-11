@@ -11,6 +11,7 @@ import {
   CALDAV_TYPE,
   GITHUB_TYPE,
   GITLAB_TYPE,
+  KIAMI_TYPE,
   ISSUE_PROVIDER_HUMANIZED,
   ISSUE_PROVIDER_ICON_MAP,
   ISSUE_STR_MAP,
@@ -24,6 +25,7 @@ import { JiraCommonInterfacesService } from './providers/jira/jira-common-interf
 import { GithubCommonInterfacesService } from './providers/github/github-common-interfaces.service';
 import { switchMap } from 'rxjs/operators';
 import { GitlabCommonInterfacesService } from './providers/gitlab/gitlab-common-interfaces.service';
+import { KiamiCommonInterfacesService } from './providers/kiami/kiami-common-interfaces.service';
 import { CaldavCommonInterfacesService } from './providers/caldav/caldav-common-interfaces.service';
 import { OpenProjectCommonInterfacesService } from './providers/open-project/open-project-common-interfaces.service';
 import { SnackService } from '../../core/snack/snack.service';
@@ -36,6 +38,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class IssueService {
   ISSUE_SERVICE_MAP: { [key: string]: IssueServiceInterface } = {
     [GITLAB_TYPE]: this._gitlabCommonInterfacesService,
+    [KIAMI_TYPE]: this._kiamiCommonInterfacesService,
     [GITHUB_TYPE]: this._githubCommonInterfacesService,
     [JIRA_TYPE]: this._jiraCommonInterfacesService,
     [CALDAV_TYPE]: this._caldavCommonInterfaceService,
@@ -56,6 +59,7 @@ export class IssueService {
     private _jiraCommonInterfacesService: JiraCommonInterfacesService,
     private _githubCommonInterfacesService: GithubCommonInterfacesService,
     private _gitlabCommonInterfacesService: GitlabCommonInterfacesService,
+    private _kiamiCommonInterfacesService: KiamiCommonInterfacesService,
     private _caldavCommonInterfaceService: CaldavCommonInterfacesService,
     private _openProjectInterfaceService: OpenProjectCommonInterfacesService,
     private _snackService: SnackService,
@@ -119,6 +123,7 @@ export class IssueService {
   }
 
   getPollTimer$(providerKey: IssueProviderKey): Observable<number> {
+    console.log("Getting providerkey poll: " + providerKey);
     return this.ISSUE_SERVICE_MAP[providerKey].pollTimer$;
   }
 

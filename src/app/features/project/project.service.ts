@@ -16,6 +16,7 @@ import { BreakNr, BreakTime, WorkContextType } from '../work-context/work-contex
 import { WorkContextService } from '../work-context/work-context.service';
 import { GITHUB_TYPE, GITLAB_TYPE, JIRA_TYPE } from '../issue/issue.const';
 import { GitlabCfg } from '../issue/providers/gitlab/gitlab';
+import { KiamiCfg } from '../issue/providers/kiami/kiami';
 import { ExportedProject } from './project-archive.model';
 import { CaldavCfg } from '../issue/providers/caldav/caldav.model';
 import {
@@ -39,6 +40,7 @@ import {
   selectCaldavCfgByProjectId,
   selectGithubCfgByProjectId,
   selectGitlabCfgByProjectId,
+  selectKiamiCfgByProjectId,
   selectJiraCfgByProjectId,
   selectOpenProjectCfgByProjectId,
   selectProjectBreakNrForProject,
@@ -109,6 +111,11 @@ export class ProjectService {
   getGitlabCfgForProject$(projectId: string): Observable<GitlabCfg> {
     return this._store$.pipe(select(selectGitlabCfgByProjectId, { id: projectId }));
   }
+
+  getKiamiCfgForProject$(projectId: string): Observable<KiamiCfg> {
+    return this._store$.pipe(select(selectKiamiCfgByProjectId, { id: projectId }));
+  }
+
 
   getCaldavCfgForProject$(projectId: string): Observable<CaldavCfg> {
     return this._store$.pipe(select(selectCaldavCfgByProjectId, { id: projectId }));

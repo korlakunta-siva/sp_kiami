@@ -6,10 +6,12 @@ import {
   CALDAV_TYPE,
   GITHUB_TYPE,
   GITLAB_TYPE,
+  KIAMI_TYPE,
   JIRA_TYPE,
   OPEN_PROJECT_TYPE,
 } from '../../issue/issue.const';
 import { GitlabCfg } from '../../issue/providers/gitlab/gitlab';
+import { KiamiCfg } from '../../issue/providers/kiami/kiami';
 import { exists } from '../../../util/exists';
 import { CaldavCfg } from '../../issue/providers/caldav/caldav.model';
 import { PROJECT_FEATURE_NAME, projectAdapter } from './project.reducer';
@@ -55,6 +57,11 @@ export const selectGithubCfgByProjectId = createSelector(
 export const selectGitlabCfgByProjectId = createSelector(
   selectProjectById,
   (p: Project): GitlabCfg => p.issueIntegrationCfgs[GITLAB_TYPE] as GitlabCfg,
+);
+
+export const selectKiamiCfgByProjectId = createSelector(
+  selectProjectById,
+  (p: Project): KiamiCfg => p.issueIntegrationCfgs[KIAMI_TYPE] as KiamiCfg,
 );
 
 export const selectCaldavCfgByProjectId = createSelector(

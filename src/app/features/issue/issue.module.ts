@@ -6,6 +6,7 @@ import { IssueContentComponent } from './issue-content/issue-content.component';
 import { GithubIssueModule } from './providers/github/github-issue/github-issue.module';
 import { IssueIconPipe } from './issue-icon/issue-icon.pipe';
 import { GitlabIssueModule } from './providers/gitlab/gitlab-issue/gitlab-issue.module';
+import { KiamiIssueModule } from './providers/kiami/kiami-issue/kiami-issue.module';
 import { CaldavIssueModule } from './providers/caldav/caldav-issue/caldav-issue.module';
 import { OpenProjectIssueModule } from './providers/open-project/open-project-issue/open-project-issue.module';
 import { EffectsModule } from '@ngrx/effects';
@@ -18,6 +19,7 @@ import { PollIssueUpdatesEffects } from './store/poll-issue-updates.effects';
     JiraIssueModule,
     GithubIssueModule,
     GitlabIssueModule,
+    KiamiIssueModule,
     CaldavIssueModule,
     OpenProjectIssueModule,
     EffectsModule.forFeature([PollToBacklogEffects, PollIssueUpdatesEffects]),
